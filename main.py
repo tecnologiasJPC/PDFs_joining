@@ -14,8 +14,8 @@ if __name__ == '__main__':
     natsorted(pdfs)
     print(f"Documents to process: {len(pdfs)}")
     for file in pdfs:
-        n = file.split('\\')[-1]
-        print(f"- {n}")
+        name = file.split('\\')[-1]
+        print(f"- {name}")
 
     warnings.filterwarnings("ignore")
 
@@ -38,9 +38,9 @@ if __name__ == '__main__':
         writer.append(pdf)
 
     # Guardar el archivo fusionado
-    name = 'joined_document.pdf'
-    with open(os.path.join(route,name), 'wb') as output:
+    out = 'joined_document.pdf'
+    with open(os.path.join(route,out), 'wb') as output:
         writer.write(output)
 
-    print(f"PDFs joined in {name}")
+    print(f"PDFs joined in {out}")
     input("Press any key to exit...")
