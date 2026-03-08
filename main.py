@@ -35,7 +35,8 @@ if __name__ == '__main__':
         writer.append(pdf)
 
     # Guardar el archivo fusionado
-    with open(os.path.join(route,'joined_document.pdf'), 'wb') as output:
+    name = 'joined_document.pdf'
+    with open(os.path.join(route,name), 'wb') as output:
         writer.write(output)
 
-    print("PDFs joined")
+    print(f"PDFs joined in {name}")
