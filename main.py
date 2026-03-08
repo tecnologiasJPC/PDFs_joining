@@ -1,7 +1,7 @@
 from pypdf import PdfWriter, PdfReader
-import os
-import warnings
 from natsort import natsorted
+import warnings
+import os
 
 if __name__ == '__main__':
     route = os.path.dirname(__file__)
@@ -39,4 +39,3 @@ if __name__ == '__main__':
         writer.write(output)
 
     print("PDFs joined")
-    input("Presione tecla para finalizar")
