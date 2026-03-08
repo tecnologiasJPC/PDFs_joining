@@ -12,7 +12,10 @@ if __name__ == '__main__':
             pdfs.append(os.path.join(route, doc))
 
     natsorted(pdfs)
-    print(f"Documents to process: {pdfs}")
+    print(f"Documents to process: {len(pdfs)}")
+    for file in pdfs:
+        n = file.split('\\')[-1]
+        print(f"- {n}")
 
     warnings.filterwarnings("ignore")
 
@@ -40,3 +43,4 @@ if __name__ == '__main__':
         writer.write(output)
 
     print(f"PDFs joined in {name}")
+    input("Press any key to exit...")
