@@ -29,16 +29,9 @@ if exist "requirements.txt" (
 if exist "main.py" (
     echo Creating shortcut...
 
-    powershell -NoProfile -ExecutionPolicy Bypass ^
-    "$ws = New-Object -ComObject WScript.Shell; ^
-    $s = $ws.CreateShortcut('%CD%\Join.lnk'); ^
-    $s.TargetPath = '%CD%\%VENV_DIR%\Scripts\python.exe'; ^
-    $s.Arguments = '""%CD%\main.py""'; ^
-    $s.WorkingDirectory = '%CD%'; ^
-    $s.IconLocation = '%CD%\%VENV_DIR%\Scripts\python.exe'; ^
-    $s.Save()"
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%CD%\Join.lnk'); $s.TargetPath = '%CD%\%VENV_DIR%\Scripts\python.exe'; $s.Arguments = '\"%CD%\main.py\"'; $s.WorkingDirectory = '%CD%'; $s.Save()"
 
-    echo Shortcut created: Run Main.lnk
+    echo Shortcut created: Join.lnk
 ) else (
     echo WARNING: main.py was not found.
 )

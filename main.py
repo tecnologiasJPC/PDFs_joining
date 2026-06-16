@@ -12,7 +12,7 @@ if __name__ == '__main__':
             pdfs.append(os.path.join(route, doc))
 
     natsorted(pdfs)
-    print(f"Documents to process: {len(pdfs)}")
+    print(f"Documents to join: {len(pdfs)}")
     for file in pdfs:
         name = file.split('\\')[-1]
         print(f"- {name}")
