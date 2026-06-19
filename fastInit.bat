@@ -36,4 +36,13 @@ if exist "main.py" (
     echo WARNING: main.py was not found.
 )
 
-pause
+@echo off
+:: Verifica si el comando 'code' existe en el sistema
+where code >nul 2>nul
+
+if %errorlevel% equ 0 (
+    code .
+) else (
+    Visual Studio Code no esta instalado en este sistema.
+    pause
+)
